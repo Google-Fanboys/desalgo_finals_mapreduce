@@ -20,7 +20,7 @@ def main() -> None:
 
     # Check command-line arguments
     if len(sys.argv) < 3:
-        print("Usage: python mapreduce.py <input_file> <output_file>")
+        print("Usage: python main.py <input_file> <output_file>")
         sys.exit(1)
 
     # Get input and output file names
