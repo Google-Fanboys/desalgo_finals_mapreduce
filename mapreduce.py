@@ -16,7 +16,7 @@ def reducer(key: str, counts: list[int]) -> tuple[str, int]:
     return key, sum(counts)
 
 def sort(result: list[tuple[str, int]]) -> list[tuple[str, int]]:
-    """Sorts the result by key in descending order."""
+    """Sorts the result by key in ascending order."""
     return sorted(result, key=lambda x: x[0])
 
 def main() -> None:
