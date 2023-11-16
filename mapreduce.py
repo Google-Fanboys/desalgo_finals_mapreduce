@@ -15,6 +15,10 @@ def reducer(key: str, counts: list[int]) -> tuple[str, int]:
     """Returns a (key, value) pair where the value is the sum of the counts."""
     return key, sum(counts)
 
+def sort(result: list[tuple[str, int]]) -> list[tuple[str, int]]:
+    """Sorts the result by key in descending order."""
+    return sorted(result, key=lambda x: x[0])
+
 def main() -> None:
     """Main program."""
 
@@ -35,9 +39,12 @@ def main() -> None:
             for word in words:
                 mapped_words.extend(mapper(word))
 
+    # Sort the (key, value) pairs by key
+    sorted_words = sort(mapped_words)
+
     # Group the (key, value) pairs by key
     reduced_words = {}
-    for key, value in mapped_words:
+    for key, value in sorted_words:
         reduced_words.setdefault(key, []).append(value)
 
     # Reduce the (key, value) pairs
